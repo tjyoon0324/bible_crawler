@@ -36,11 +36,13 @@ bible_page = requests.get(url)
 bible_page_text = bible_page.text
 
 soup = BeautifulSoup(bible_page.text, 'html.parser')
+# print(type(soup))
 texts_only = soup.select("#tdBible1 > span")
+# print(type(texts_only))
 str_texts_only = str(texts_only)
 new_soup = BeautifulSoup(str_texts_only, 'html.parser')
 
-for font in new_soup('font'):
+for font in new_soup("font"):
     print(font)
 
 for div in new_soup("div"):
