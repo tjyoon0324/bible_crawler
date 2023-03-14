@@ -7,7 +7,7 @@ from bible_list import szGAEBook
 
 bible_title_chapter_list = szGAEBook
 
-for i in bible_title_chapter_list:
+for i in bible_title_chapter_list[0:40]:
     os.makedirs('/Users/tj/PycharmProjects/bible_crawler/bible_text/{}. {}'.format(i[0],i[1]))
     for j in range(3,len(i)):
         url = "https://www.bskorea.or.kr/bible/korbibReadpage.php?version=GAE&book={}&chap={}&sec=1&cVersion=&fontSize=15px&fontWeight=normal".format(i[2],i[j])
